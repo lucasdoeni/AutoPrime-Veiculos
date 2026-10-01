@@ -7,9 +7,6 @@ Plataforma web moderna, responsiva e de alto padrão desenvolvida em **React 19*
   <a href="https://lucasdoeni.github.io/AutoPrime-Veiculos/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/▶%20EXECUTAR%20PROJETO%20AO%20VIVO-D4AF37?style=for-the-badge&logo=googlechrome&logoColor=0B0C10&labelColor=111318" alt="Executar AutoPrime" height="42" />
   </a>
-  <p style="margin-top: 10px;">
-    🚀 <strong><a href="https://lucasdoeni.github.io/AutoPrime-Veiculos/" target="_blank" rel="noopener noreferrer">Clique aqui para Abrir e Executar a Aplicação em Nova Guia</a></strong>
-  </p>
   <br />
 </div>
 
