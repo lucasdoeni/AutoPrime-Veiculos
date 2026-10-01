@@ -2,13 +2,7 @@
 
 Plataforma web moderna, responsiva e de alto padrão desenvolvida em **React 19**, **Vite**, **Node.js / Express** e **MySQL 8.0**, com identidade visual premium (*Preto Obsidian #0B0C10*, *Ouro Dourado #D4AF37* e *Branco Puro*).
 
-<div align="center">
-  <br />
-  <a href="https://lucasdoeni.github.io/AutoPrime-Veiculos/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/▶%20EXECUTAR%20PROJETO%20AO%20VIVO-D4AF37?style=for-the-badge&logo=googlechrome&logoColor=0B0C10&labelColor=111318" alt="Executar AutoPrime" height="42" />
-  </a>
-  <br />
-</div>
+
 
 ---
 
@@ -55,5 +49,13 @@ Plataforma web moderna, responsiva e de alto padrão desenvolvida em **React 19*
 * **Deploy Backend/Banco:** Railway / Render / Hostinger / AWS RDS
 
 ---
+
+<div align="center">
+  <br />
+  <a href="https://lucasdoeni.github.io/AutoPrime-Veiculos/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/▶%20EXECUTAR%20PROJETO-D4AF37?style=for-the-badge&logo=googlechrome&logoColor=0B0C10&labelColor=111318" alt="Executar AutoPrime" height="42" />
+  </a>
+  <br />
+</div>
 
 Desenvolvido para **AutoPrime Veículos**.
