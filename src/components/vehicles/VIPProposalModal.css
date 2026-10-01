@@ -1,0 +1,377 @@
+/* Embedded Proposal Dossier Card */
+.vip-proposal-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 780px;
+  max-height: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), var(--gold-glow);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.25s ease;
+}
+
+/* Control Toolbar */
+.vip-proposal-toolbar {
+  padding: 10px 18px;
+  background: #11131B;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vip-client-name-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vip-client-name-input-group label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.vip-client-input {
+  background: #181B26;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  width: 190px;
+}
+
+.vip-client-input:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+}
+
+.vip-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Printable Document Container (Screen View) */
+.vip-doc-scroll-viewport {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  background: #0D0E12;
+}
+
+.vip-document {
+  background: #FFFFFF;
+  color: #111318;
+  border-radius: var(--radius-sm);
+  padding: 24px 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  max-width: 720px;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  position: relative;
+}
+
+/* Document Header */
+.vip-doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid #D4AF37;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.vip-doc-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vip-doc-logo-box {
+  width: 36px;
+  height: 36px;
+  background: #0B0C10;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D4AF37;
+}
+
+.vip-doc-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0B0C10;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.vip-doc-brand-title span {
+  color: #A8841B;
+}
+
+.vip-doc-brand-sub {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #707585;
+}
+
+.vip-doc-meta {
+  text-align: right;
+  font-size: 0.72rem;
+  color: #555A68;
+  line-height: 1.35;
+}
+
+.vip-proposal-number {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #A8841B;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+/* Client Badge */
+.vip-client-banner {
+  background: #F8F9FC;
+  border-left: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.vip-client-banner strong {
+  color: #0B0C10;
+  font-size: 0.88rem;
+}
+
+.vip-validity-tag {
+  font-size: 0.72rem;
+  color: #707585;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Car Hero in Proposal */
+.vip-car-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.vip-car-photo {
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+}
+
+.vip-car-headline h2 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #0B0C10;
+  line-height: 1.15;
+  margin-bottom: 2px;
+}
+
+.vip-car-headline p {
+  color: #647087;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.vip-price-callout {
+  background: #FDF9EE;
+  border: 1.2px solid #E8D18C;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.vip-price-lbl {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #8C6D14;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.vip-price-num {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0B0C10;
+  line-height: 1.1;
+}
+
+/* Technical Sheet */
+.vip-section-heading {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #0B0C10;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 4px;
+}
+
+.vip-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  margin-bottom: 12px;
+}
+
+.vip-specs-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #EDF2F7;
+}
+
+.vip-specs-table tr:nth-child(even) {
+  background-color: #F8FAFC;
+}
+
+.vip-specs-table td strong {
+  color: #1A202C;
+}
+
+.vip-specs-table td span {
+  color: #64748B;
+}
+
+/* Features Grid */
+.vip-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 14px;
+  font-size: 0.74rem;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+.vip-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vip-feat-item svg {
+  color: #A8841B;
+  flex-shrink: 0;
+}
+
+/* Guarantees Box */
+.vip-guarantees-bar {
+  background: #F8F9FC;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vip-guarantee-col {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.vip-guarantee-col svg {
+  color: #16A34A;
+}
+
+/* Footer & Signature */
+.vip-doc-footer {
+  border-top: 1.5px solid #E2E8F0;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  align-items: end;
+  font-size: 0.72rem;
+  color: #64748B;
+  line-height: 1.35;
+}
+
+.vip-signature-line {
+  border-top: 1px solid #94A3B8;
+  padding-top: 4px;
+  text-align: center;
+  font-weight: 600;
+  color: #1E293B;
+  font-size: 0.72rem;
+}
+
+/* PRINT MEDIA SPECIFIC RULES */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .vip-proposal-wrapper,
+  .vip-doc-scroll-viewport,
+  #vip-proposal-document,
+  #vip-proposal-document * {
+    visibility: visible;
+  }
+
+  .vip-proposal-wrapper {
+    box-shadow: none;
+    border: none;
+    max-height: none;
+    max-width: 100%;
+    margin: 0;
+    position: static;
+  }
+
+  .vip-proposal-toolbar {
+    display: none !important;
+  }
+
+  .vip-doc-scroll-viewport {
+    background: transparent;
+    padding: 0;
+    overflow: visible;
+    max-height: none;
+  }
+
+  .vip-document {
+    box-shadow: none;
+    padding: 10px 0;
+    max-width: 100%;
+  }
+
+  @page {
+    size: A4;
+    margin: 1.2cm;
+  }
+}

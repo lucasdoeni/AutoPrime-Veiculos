@@ -1,0 +1,157 @@
+.tradein-section {
+  padding: 80px 0;
+  background-color: var(--bg-main);
+  position: relative;
+}
+
+.tradein-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.tradein-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gold-gradient);
+}
+
+.tradein-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Left Promo Info */
+.tradein-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tradein-title {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.tradein-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.tradein-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.tradein-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+}
+
+.tradein-perk-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Right Form */
+.tradein-form {
+  background: rgba(11, 12, 16, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tradein-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tradein-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tradein-input-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tradein-input {
+  background-color: #12141C;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.tradein-input:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.tradein-textarea {
+  background-color: #12141C;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  resize: vertical;
+  min-height: 70px;
+}
+
+.tradein-textarea:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+@media (max-width: 900px) {
+  .tradein-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .tradein-card {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tradein-form-row {
+    grid-template-columns: 1fr;
+  }
+}
