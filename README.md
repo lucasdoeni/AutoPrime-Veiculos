@@ -88,19 +88,22 @@ mysql -u root -p < server/schema.sql
 npm run seed
 ```
 
-### 4. Iniciar os Servidores
+### 4. Executar o Projeto Completo (1 Comando)
 
-Em terminais separados:
-
+Basta rodar no terminal:
 ```bash
-# Terminal 1: Iniciar o Backend API (MySQL)
-npm run server
-# -> Rodando em http://localhost:3001
-
-# Terminal 2: Iniciar o Front-End (React + Vite)
-npm run dev
-# -> Acessível em http://localhost:5173
+npm run executar
 ```
+*(Ou dar dois cliques no arquivo **`executar.bat`** no Windows).*
+
+Esse comando inicia simultaneamente:
+* 🟢 **API Backend com MySQL** na porta `http://localhost:3001`
+* 🟢 **Front-End React** na porta `http://localhost:5173`
+* 🌐 **Abre o seu navegador automaticamente** com o site da AutoPrime pronto!
+
+> Também é possível rodar individualmente se preferir:
+> * `npm run server` (apenas a API MySQL)
+> * `npm run dev` (apenas o Front-End)
 
 ---
 
