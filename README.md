@@ -4,17 +4,6 @@ Plataforma web moderna, responsiva e de alto padrão desenvolvida em **React 19*
 
 ---
 
-## 🏗️ Arquitetura do Sistema
-
-```
-[ FRONT-END (React 19 + Vite) ]          -> Porta 5173
-       ↕ (API REST / JSON)
-[ BACK-END (Node.js + Express + Multer) ] -> Porta 3001
-       ↕ (Pool de Conexões TCP)
-[ BANCO DE DADOS (MySQL 8.0) ]            -> Porta 3306 (autoprime_db)
-```
-
----
 
 ## 🌟 Funcionalidades Principais
 
@@ -48,64 +37,6 @@ Plataforma web moderna, responsiva e de alto padrão desenvolvida em **React 19*
    - Tabelas estruturadas: `vehicles`, `vehicle_images`, `vehicle_badges`, `vehicle_features`, `leads`, `users`.
    - Transações SQL para atomicidade de cadastro de veículos com fotos e opcionais.
 
----
-
-## 🚀 Como Executar o Projeto Localmente
-
-### Pré-requisitos
-* **Node.js** (v18 ou superior)
-* **MySQL 8.0** ativo na máquina
-
-### 1. Clonar o Repositório
-```bash
-git clone https://github.com/SEU_USUARIO/autoprime-veiculos.git
-cd autoprime-veiculos
-```
-
-### 2. Instalar as Dependências
-```bash
-npm install
-```
-
-### 3. Configurar o Banco de Dados MySQL
-1. Crie o arquivo `.env` na pasta `server/` baseado no `.env.example`:
-```env
-PORT=3001
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=sua_senha_mysql
-DB_NAME=autoprime_db
-ADMIN_KEY=admin123
-```
-
-2. Execute o script de criação das tabelas e migração dos veículos iniciais:
-```bash
-# Executa o schema no MySQL
-mysql -u root -p < server/schema.sql
-
-# Popula os veículos de luxo iniciais
-npm run seed
-```
-
-### 4. Executar o Projeto Completo (1 Comando)
-
-Basta rodar no terminal:
-```bash
-npm run executar
-```
-*(Ou dar dois cliques no arquivo **`executar.bat`** no Windows).*
-
-Esse comando inicia simultaneamente:
-* 🟢 **API Backend com MySQL** na porta `http://localhost:3001`
-* 🟢 **Front-End React** na porta `http://localhost:5173`
-* 🌐 **Abre o seu navegador automaticamente** com o site da AutoPrime pronto!
-
-> Também é possível rodar individualmente se preferir:
-> * `npm run server` (apenas a API MySQL)
-> * `npm run dev` (apenas o Front-End)
-
----
 
 ## 🛠️ Tecnologias Utilizadas
 
