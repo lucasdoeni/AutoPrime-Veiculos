@@ -12,13 +12,17 @@ import {
   Share2, 
   Check, 
   ArrowLeft,
-  FileDown 
+  FileDown,
+  Camera,
+  RotateCw,
+  Sparkles
 } from 'lucide-react';
 import VehicleGallery from '../components/vehicles/VehicleGallery';
 import VehicleSpecs from '../components/vehicles/VehicleSpecs';
 import VehicleCard from '../components/vehicles/VehicleCard';
 import FinancingSection from '../components/home/FinancingSection';
 import VIPProposalModal from '../components/vehicles/VIPProposalModal';
+import Showroom360Viewer from '../components/vehicles/Showroom360Viewer';
 import { formatBRL, formatKm, generateWhatsAppLink } from '../utils/formatters';
 import { dealershipInfo, vehiclesData } from '../data/vehiclesData';
 
@@ -33,6 +37,7 @@ export default function VehicleDetails({
   const [copiedLink, setCopiedLink] = useState(false);
   const [showFinancingModal, setShowFinancingModal] = useState(false);
   const [showProposalModal, setShowProposalModal] = useState(false);
+  const [mediaMode, setMediaMode] = useState('showroom360');
   const proposalRef = useRef(null);
 
   if (!vehicle) {
@@ -149,9 +154,84 @@ export default function VehicleDetails({
         }}>
           {/* Left Column: Gallery & Technical Specs */}
           <div>
-            {/* Gallery */}
+            {/* Media View Mode Switcher: Galeria vs Showroom 360° */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginBottom: '18px',
+              background: 'rgba(255, 255, 255, 0.03)',
+              padding: '6px',
+              borderRadius: '12px',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              width: 'fit-content',
+              flexWrap: 'wrap'
+            }}>
+              <button
+                type="button"
+                onClick={() => setMediaMode('showroom360')}
+                style={{
+                  padding: '9px 18px',
+                  borderRadius: '8px',
+                  border: mediaMode === 'showroom360' ? '1px solid var(--gold-primary)' : '1px solid transparent',
+                  cursor: 'pointer',
+                  background: mediaMode === 'showroom360' 
+                    ? 'linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0.08) 100%)' 
+                    : 'transparent',
+                  color: mediaMode === 'showroom360' ? 'var(--gold-primary)' : '#94A3B8',
+                  fontWeight: 700,
+                  fontSize: '0.86rem',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  boxShadow: mediaMode === 'showroom360' ? '0 0 15px rgba(212, 175, 55, 0.2)' : 'none',
+                  transition: 'all 0.25s ease'
+                }}
+              >
+                <RotateCw size={15} color={mediaMode === 'showroom360' ? 'var(--gold-primary)' : '#94A3B8'} />
+                <span>Showroom 360° & Modo Noturno</span>
+                <span style={{ 
+                  background: 'var(--gold-primary)', 
+                  color: '#0B0C10', 
+                  fontSize: '0.65rem', 
+                  padding: '2px 6px', 
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  fontWeight: 800,
+                  letterSpacing: '0.05em'
+                }}>EXCLUSIVO</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setMediaMode('gallery')}
+                style={{
+                  padding: '9px 18px',
+                  borderRadius: '8px',
+                  border: mediaMode === 'gallery' ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid transparent',
+                  cursor: 'pointer',
+                  background: mediaMode === 'gallery' ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+                  color: mediaMode === 'gallery' ? '#FFFFFF' : '#94A3B8',
+                  fontWeight: 600,
+                  fontSize: '0.86rem',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  transition: 'all 0.25s ease'
+                }}
+              >
+                <Camera size={15} />
+                <span>Galeria de Fotos ({images.length})</span>
+              </button>
+            </div>
+
+            {/* Media Area: Showroom 360 or Traditional Gallery */}
             <div style={{ marginBottom: '40px' }}>
-              <VehicleGallery images={images} altText={`${brand} ${model}`} />
+              {mediaMode === 'showroom360' ? (
+                <Showroom360Viewer vehicle={vehicle} />
+              ) : (
+                <VehicleGallery images={images} altText={`${brand} ${model}`} />
+              )}
             </div>
 
             {/* Technical Sheet & Equipments */}

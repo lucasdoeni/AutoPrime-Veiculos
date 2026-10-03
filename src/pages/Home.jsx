@@ -1,10 +1,11 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Shield, Award, CheckCircle2, ChevronRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Award, CheckCircle2, ChevronRight, RotateCw } from 'lucide-react';
 import HeroBanner from '../components/home/HeroBanner';
 import VehicleCard from '../components/vehicles/VehicleCard';
 import FinancingSection from '../components/home/FinancingSection';
 import TradeInSection from '../components/home/TradeInSection';
 import AboutSection from '../components/home/AboutSection';
+import Showroom360Viewer from '../components/vehicles/Showroom360Viewer';
 import { vehiclesData } from '../data/vehiclesData';
 
 export default function Home({ 
@@ -115,7 +116,63 @@ export default function Home({
         </div>
       </section>
 
-      {/* 3. Financing Simulator Section */}
+      {/* 3. Interactive Showroom Virtual 360° & Modo Noturno */}
+      <section style={{ 
+        padding: '90px 0', 
+        backgroundColor: '#07080B', 
+        borderTop: '1px solid rgba(212, 175, 55, 0.25)', 
+        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        position: 'relative'
+      }}>
+        <div className="container">
+          <div className="section-header" style={{ marginBottom: '36px' }}>
+            <div className="section-tag">
+              <RotateCw size={14} />
+              <span>Experiência Imersiva Exclusiva</span>
+            </div>
+            <h2 className="section-title">
+              Showroom Virtual <span className="text-gold-gradient">360° & Modo Noturno</span>
+            </h2>
+            <p className="section-subtitle">
+              Interaja em tempo real: arraste para girar em 360°, ative o Modo Noturno com faróis em LED, explore paletas de cores de fábrica e inspecione pontos técnicos de alta performance.
+            </p>
+          </div>
+
+          <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+            <Showroom360Viewer vehicle={featuredCars[0] || vehicles[0]} />
+
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center', 
+              gap: '16px', 
+              marginTop: '32px',
+              flexWrap: 'wrap'
+            }}>
+              <button 
+                type="button"
+                className="btn btn-outline-gold" 
+                onClick={() => onSelectVehicle(featuredCars[0] || vehicles[0])}
+                style={{ padding: '12px 28px', fontSize: '0.92rem' }}
+              >
+                <span>Ficha Técnica do {(featuredCars[0] || vehicles[0])?.brand} {(featuredCars[0] || vehicles[0])?.model}</span>
+                <ChevronRight size={18} />
+              </button>
+
+              <button 
+                type="button"
+                className="btn btn-secondary" 
+                onClick={onNavigateCatalog}
+                style={{ padding: '12px 24px', fontSize: '0.92rem' }}
+              >
+                <span>Explorar Outros Modelos</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Financing Simulator Section */}
       <FinancingSection />
 
       {/* 4. Trade-in Section */}
