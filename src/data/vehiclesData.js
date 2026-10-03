@@ -1,3 +1,9 @@
+const getAsset = (path) => {
+  if (!path || path.startsWith('http')) return path;
+  const base = (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) || './';
+  return `${base.replace(/\/$/, '')}/${path.replace(/^\.\//, '').replace(/^\//, '')}`;
+};
+
 export const vehiclesData = [
   {
     id: "porsche-911-carrera-s-2023",
@@ -21,10 +27,10 @@ export const vehiclesData = [
     topSpeed: "308 km/h",
     consumption: "Urbano: 6.9 km/l | Estrada: 9.6 km/l",
     images: [
-      "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
+      'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "Configuração exclusiva Crayon com interior em couro Club Marrom Trufa. Equipado com Pacote Sport Chrono, escapamento esportivo ativo com ponteiras em preto brilhante, rodas Carrera Classic aro 20/21 e faróis Matrix em LED com PDLS Plus. Veículo impecável, sem retoques, com PPF frontal e todas as revisões realizadas em concessionária autorizada Porsche.",
     features: [
@@ -62,10 +68,10 @@ export const vehiclesData = [
     topSpeed: "290 km/h (M Driver's Package)",
     consumption: "Urbano: 5.7 km/l | Estrada: 7.8 km/l",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/6/6e/BMW_X6_M_%28G06%29_IMG_3374.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/8/8c/BMW_X6_sideview.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/2/29/2018_BMW_X6_xDrive30d_M_Sport_Automatic_3.0_Rear.jpg",
-      "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=80"
+      getAsset('vehicles/bmw-x6m-front.jpg'),
+      getAsset('vehicles/bmw-x6m-side.jpg'),
+      getAsset('vehicles/bmw-x6m-rear.jpg'),
+      'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "Autêntico monstro do asfalto com 625 cavalos de potência. Blindagem nível III-A Inbra com vidros SpaceGlass de 19mm, sem nenhuma delaminação e garantia vigente. Grade frontal iluminada Iconic Glow, acabamentos internos em fibra de carbono fosca e sistema de escapamento esportivo M.",
     features: [
@@ -103,10 +109,10 @@ export const vehiclesData = [
     topSpeed: "290 km/h",
     consumption: "Urbano: 6.8 km/l | Estrada: 9.3 km/l",
     images: [
-      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80"
+      'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "O último com motor V8 puro-sangue assinado pelo mestre artesão AMG. Pintura especial de fábrica Selenite Magno com interior bicolour em couro Nappa preto e vermelho pimenta. Freios de alto desempenho com pinças vermelhas, diferencial eletrônico de deslizamento limitado e pacote aerodinâmico AMG.",
     features: [
@@ -144,10 +150,10 @@ export const vehiclesData = [
     topSpeed: "305 km/h",
     consumption: "Urbano: 6.2 km/l | Estrada: 8.7 km/l",
     images: [
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80"
+      'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "A super perua definitiva! Design agressivo com para-lamas alargados em 40mm de cada lado e pacote exterior Black Optical. Rodas de 22 polegadas usinadas em corte diamante, suspensão a ar adaptativa esportiva RS e interior com bancos em concha RS costurados em favo de mel.",
     features: [
@@ -185,10 +191,10 @@ export const vehiclesData = [
     topSpeed: "191 km/h",
     consumption: "Urbano: 10.4 km/l | Estrada: 12.8 km/l",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/a/ac/0_Land_Rover_Defender_110_%28L663%29_1.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/7/77/Land_Rover_Defender_%28L663%29_Auto_Zuerich_2021_IMG_0431.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/a/a3/Land_Rover_Defender_%28L663%29_IMG_4267.jpg",
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80"
+      getAsset('vehicles/defender-front.jpg'),
+      getAsset('vehicles/defender-side.jpg'),
+      getAsset('vehicles/defender-rear.jpg'),
+      'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "A união perfeita entre o luxo incondicional britânico e a lendária capacidade off-road extrema. Versão de 7 lugares com interior em couro Windsor e acabamentos rústicos sofisticados. Suspensão pneumática adaptativa regulável com sensor de profundidade para travessia de água até 900mm.",
     features: [
@@ -226,10 +232,10 @@ export const vehiclesData = [
     topSpeed: "272 km/h",
     consumption: "Urbano: 7.1 km/l | Estrada: 9.2 km/l",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/3/3f/2022_Porsche_Macan_GTS_Auto_Zuerich_2021_IMG_0044.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/d/dc/Porsche_Macan_GTS.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/d/db/Porsche_Macan_GTS_%28Facelift%29_%E2%80%93_h_10052021.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/e/ec/Porsche_Macan_GTS_%2895B%29.jpg"
+      getAsset('vehicles/macan-front.jpg'),
+      getAsset('vehicles/macan-side.jpg'),
+      getAsset('vehicles/macan-rear.jpg'),
+      getAsset('vehicles/macan-cockpit.jpg')
     ],
     description: "SUV compacto esportivo com comportamento dinâmico de cupê de pista. Cor exclusiva Papaya Metallic com pacote interno GTS em contraste laranja. Rodas RS Spyder Design de 21 polegadas em preto acetinado, suspensão pneumática esportiva PASM rebaixada e escapamento esportivo original com 4 ponteiras.",
     features: [
@@ -267,10 +273,10 @@ export const vehiclesData = [
     topSpeed: "250 km/h (Limitado)",
     consumption: "Urbano: 6.0 km/l | Estrada: 8.9 km/l",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/7/71/Ford_Mustang_Coup%C3%A9_Mach_1_%28VI%2C_Facelift%29_%E2%80%93_f_12022023.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/5/5a/Ford_Mustang_Mach_1.jpg",
-      "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1547744152-14d985cb937f?auto=format&fit=crop&w=1200&q=80"
+      getAsset('vehicles/mustang-front.jpg'),
+      getAsset('vehicles/mustang-side.jpg'),
+      'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1547744152-14d985cb937f?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "Série lendária Mach 1 na icônica cor Fighter Jet Grey com faixas acetinadas e frisos refletores em laranja. Componentes aerodinâmicos e de refrigeração herdados do Shelby GT350 e GT500. Suspensão adaptativa MagneRide de calibração específica e escapamento quádruplo com 4 níveis sonoros.",
     features: [
@@ -308,10 +314,10 @@ export const vehiclesData = [
     topSpeed: "180 km/h (Limitado)",
     consumption: "Autonomia 100% Elétrica: até 78 km | Híbrido: 26.7 km/l",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/b/b3/Volvo_XC60_B5_Mild-Hybrid_AWD_%282022%29_%2852101859478%29.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/8/8d/0_Volvo_XC60_Plug-in_Hybrid_%28SPA%29_1.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/0/07/Volvo_XC60_B5_AWD_Pine_Grey_Metallic_CN-spec_diplomatic_rear_right.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/b/b2/Volvo_XC60_II_2025_facelift_001.jpg"
+      getAsset('vehicles/volvo-front.jpg'),
+      getAsset('vehicles/volvo-side.jpg'),
+      getAsset('vehicles/volvo-rear.jpg'),
+      getAsset('vehicles/volvo-cockpit.jpg')
     ],
     description: "O suprassumo da segurança sueca e da sustentabilidade com performance assustadora de 462 cv. Autonomia pura em modo elétrico para o dia a dia urbano e motor a combustão para viagens sem limites. Versão topo de linha Ultimate Dark com todos os cromados substituídos por acabamento preto brilhante.",
     features: [
@@ -349,10 +355,10 @@ export const vehiclesData = [
     topSpeed: "174 km/h (Limitado)",
     consumption: "Urbano: 5.3 km/l | Estrada: 6.6 km/l",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/a/ad/Ram_1500_Rebel_%28DT%29_IMG_5357.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/d/d6/2019_Ram_1500_Rebel_4x4%2C_front_11.10.19.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/a/a5/Ram_1500_Rebel_%28DT%29_IMG_5359.jpg",
-      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1200&q=80"
+      getAsset('vehicles/ram-front.jpg'),
+      getAsset('vehicles/ram-side.jpg'),
+      getAsset('vehicles/ram-rear.jpg'),
+      'https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "A picape mais potente e imponente do Brasil. Espaço interno de van executiva com conforto incomparável e força bruta do motor V8 HEMI de 400 cv. Caçamba multifuncional com divisórias RamBox iluminadas e tomadas 115V integradas.",
     features: [
@@ -390,10 +396,10 @@ export const vehiclesData = [
     topSpeed: "235 km/h",
     consumption: "Urbano: 10.6 km/l (G) | Estrada: 13.9 km/l (G)",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/0/03/2019_BMW_320d_xDrive_M_Sport_2.0_Front.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/e/e3/BMW_G20_LCI_320i_M_Sport_M_Portimao_Blue_Metallic_%284%29.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/1/16/G20-Rear.jpg",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80"
+      getAsset('vehicles/bmw320-front.jpg'),
+      getAsset('vehicles/bmw320-side.jpg'),
+      getAsset('vehicles/bmw320-rear.jpg'),
+      'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "O sedã premium mais desejado e vendido do país em estado idêntico a zero quilômetro. Pacote M Sport autêntico com volante esportivo M, rodas aro 19 bicolores, freios esportivos M com pinças azuis e o espetacular BMW Curved Display com iDrive 8.",
     features: [
@@ -431,10 +437,10 @@ export const vehiclesData = [
     topSpeed: "185 km/h",
     consumption: "Urbano: 10.1 km/l | Estrada: 11.3 km/l",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/e/ee/2024_Toyota_HiLux_GR_Sport_front.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/8/81/Toyota_HiLux_GR_Sport_1X7A7281.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/e/e2/2023_Toyota_Hilux_GR_Sport_D-4D_4WD_DCB.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/0/0a/2019_Toyota_Hilux_GR_Sport_%28Japan%29.jpg"
+      getAsset('vehicles/hilux-front.jpg'),
+      getAsset('vehicles/hilux-side.jpg'),
+      getAsset('vehicles/hilux-rear.jpg'),
+      getAsset('vehicles/hilux-cockpit.jpg')
     ],
     description: "Versão preparada pela divisão mundial de corridas Toyota Gazoo Racing. Vias mais largas (+140mm na frente e +155mm atrás) que conferem estabilidade incomparável. Amortecedores monotubo recalibrados, freios traseiros a disco e interior esportivo com camurça sintética e costuras vermelhas.",
     features: [
@@ -472,10 +478,10 @@ export const vehiclesData = [
     topSpeed: "210 km/h",
     consumption: "Autonomia 100% Elétrica: 45 km | Média: 19.3 km/l",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/3/35/Jeep_Grand_Cherokee_%28WL%29_4xe_IMG_7801.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/b/b2/2022_Jeep_Grand_Cherokee_4xe_Trailhawk.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/1/10/Jeep_Grand_Cherokee_L_Overland_Automesse_Ludwigsburg_2022_1X7A5918.jpg",
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
+      getAsset('vehicles/jeep-front.jpg'),
+      getAsset('vehicles/jeep-side.jpg'),
+      getAsset('vehicles/jeep-rear.jpg'),
+      'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80'
     ],
     description: "A quinta geração do SUV mais premiado da história agora em versão híbrida plug-in de altíssimo padrão. Interior revestido em couro Palermo legítimo com inserções em madeira de nogueira natural. Sistema de tração Quadra-Trac II com reduzida e seletor Selec-Terrain.",
     features: [

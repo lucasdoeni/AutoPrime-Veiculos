@@ -410,7 +410,7 @@
   margin: 0;
 }
 
-/* Perspective Badge & Swipe Hint */
+/* Perspective Badge & Color Pill */
 .stage-perspective-badge {
   position: absolute;
   top: 16px;
@@ -418,9 +418,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(11, 12, 16, 0.8);
+  background: rgba(11, 12, 16, 0.85);
   backdrop-filter: blur(8px);
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -429,19 +429,25 @@
   z-index: 5;
 }
 
-.stage-swipe-hint {
+.stage-color-pill {
   position: absolute;
-  bottom: 14px;
+  bottom: 16px;
   left: 18px;
-  background: rgba(11, 12, 16, 0.7);
+  background: rgba(11, 12, 16, 0.85);
   backdrop-filter: blur(8px);
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.74rem;
-  color: #94A3B8;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  pointer-events: none;
+  font-size: 0.78rem;
+  color: #CBD5E1;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
   z-index: 5;
+}
+
+.stage-color-pill strong {
+  color: #FFFFFF;
 }
 
 /* Deck Controls Console */
@@ -570,47 +576,30 @@
   font-weight: 700;
 }
 
-/* Paint Selector */
-.deck-paint-selector {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.paint-label {
-  font-size: 0.8rem;
-  color: #94A3B8;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.paint-swatches-list {
+/* Genuine Vehicle Specs Bar in Showroom */
+.showroom-vehicle-specs-bar {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
-.paint-swatch {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
+.specs-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #E2E8F0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-  padding: 0;
+  gap: 6px;
 }
 
-.paint-swatch:hover {
-  transform: scale(1.15);
-  border-color: #FFF;
+.specs-pill.highlight {
+  border-color: rgba(212, 175, 55, 0.35);
+  color: var(--gold-primary, #D4AF37);
+  background: rgba(212, 175, 55, 0.08);
 }
 
-.paint-swatch.selected {
-  transform: scale(1.22);
-  border-color: var(--gold-primary, #D4AF37);
-  box-shadow: 0 0 10px var(--gold-primary, #D4AF37);
-}
